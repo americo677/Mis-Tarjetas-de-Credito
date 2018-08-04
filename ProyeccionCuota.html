@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Proyección de Cuotas de Consumo Tarjeta de Crédito</title>
+    <style>
+            .invoice-box{
+                max-width:850px;
+                margin:auto;
+                padding:30px;
+                border:1px solid #eee;
+                box-shadow:0 0 10px rgba(0, 0, 0, .15);
+                font-size:16px;
+                line-height:24px;
+                font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+                color:#555;
+            }
+
+        .invoice-box table{
+            width:100%;
+            line-height:inherit;
+            text-align:left;
+        }
+
+        .invoice-box table td{
+            padding:5px;
+            vertical-align:top;
+        }
+
+        .invoice-box table tr td:nth-child(2){
+            text-align:right;
+        }
+
+        .invoice-box table tr.top table td{
+            padding-bottom:20px;
+        }
+
+        .invoice-box table tr.top table td.title{
+            font-size:45px;
+            line-height:45px;
+            color:#333;
+        }
+
+        .invoice-box table tr.information table td{
+            padding-bottom:40px;
+        }
+
+        .invoice-box table tr.heading td{
+            background:#eee;
+            border-bottom:1px solid #ddd;
+            font-weight:bold;
+            white-space: nowrap;
+        }
+
+        .invoice-box table tr.details td{
+            padding-bottom:20px;
+            white-space:nowrap;
+        }
+
+        .invoice-box table tr.item td{
+            border-bottom:1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td{
+            border-bottom:none;
+            white-space:nowrap;
+        }
+
+        .invoice-box table tr.total td:nth-child(2){
+            border-top:2px solid #eee;
+            font-weight:bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td{
+                width:100%;
+                display:block;
+                text-align:center;
+            }
+
+            .invoice-box table tr.information table td{
+                width:100%;
+                display:block;
+                text-align:center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr class="top">
+                    <td colspan="9">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="title" width="50%">
+                                        <img src="#IMAGEN_COMPRA#" style="width:100%; max-width:200px; background-color: #cdcdcd">
+                                    </td>
+                                    <td width="50%" align="right">
+                                        <b>Tarjeta # : </b>#NUMERO_TARJETA#<br>
+                                        <b>Cupo Total: </b>#CUPO_TARJETA#<br>
+                                        <b>Cupo Disp : </b>#CUPO_DISPONIBLE#
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="information">
+                    <td colspan="9">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td> <b>Valor de la Compra: </b>#VALOR_COMPRA# </td>
+                                    <td> <b>Fecha de la Compra: </b>#FECHA_COMPRA# </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="heading">
+                    <td colspan="9">
+                        <table>
+                            <tbody>
+                                <td> <b>Descripción de la Compra</b> </td>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="details">
+                    <table>
+                        <tbody>
+                            <td> #DESCRIPCION_COMPRA# </td>
+                        </tbody>
+                    </table>
+                </tr>
+                <tr>
+                    <td colspan="9">
+                        <table>
+                            <tbody>
+                                <tr class="heading">
+                                    <td width="5" align="center"> No. </td>
+                                    <td width="20" align="center"> Fecha Corte </td>
+                                    <td width="10" align="center"> Valor Compra </td>
+                                    <td width="10" align="center"> Dias </td>
+                                    <td width="15" align="center"> Interés diario </td>
+                                    <td width="10" align="center"> Saldo </td>
+                                    <td width="10" align="center"> Valor Cuota </td>
+                                    <td width="10" align="center"> Total Intereses </td>
+                                    <td width="10" align="center"> Total Cuota </td>
+                                </tr>
+                                #ITEMS#
+                                <tr class="total">
+                                    <td width="5"> <br> </td>
+                                    <td width="20"> <br> </td>
+                                    <td width="10"> <br> </td>
+                                    <td width="10"> <br> </td>
+                                    <td width="15"> <br> </td>
+                                    <td width="10"> <br> </td>
+                                    <td width="10"> <br> </td>
+                                    <td width="10"> <br> </td>
+                                    <td width="10"> Total: #TOTAL_A_PAGAR# </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

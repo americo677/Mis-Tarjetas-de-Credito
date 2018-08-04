@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E0702A61EF1ADB00014AA16 /* Banca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0702A51EF1ADB00014AA16 /* Banca.swift */; };
+		1E0702AB1EF1BBA10014AA16 /* Compra+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0702A71EF1BBA10014AA16 /* Compra+CoreDataClass.swift */; };
+		1E0702AC1EF1BBA10014AA16 /* Compra+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0702A81EF1BBA10014AA16 /* Compra+CoreDataProperties.swift */; };
+		1E0702AD1EF1BBA10014AA16 /* Proyeccion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0702A91EF1BBA10014AA16 /* Proyeccion+CoreDataClass.swift */; };
+		1E0702AE1EF1BBA10014AA16 /* Proyeccion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0702AA1EF1BBA10014AA16 /* Proyeccion+CoreDataProperties.swift */; };
+		1E1702951EF07977005FC2A7 /* Extracto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E17028B1EF07976005FC2A7 /* Extracto+CoreDataClass.swift */; };
+		1E1702961EF07977005FC2A7 /* Extracto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E17028C1EF07976005FC2A7 /* Extracto+CoreDataProperties.swift */; };
+		1E1702971EF07977005FC2A7 /* Detalle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E17028D1EF07976005FC2A7 /* Detalle+CoreDataClass.swift */; };
+		1E1702981EF07977005FC2A7 /* Detalle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E17028E1EF07976005FC2A7 /* Detalle+CoreDataProperties.swift */; };
+		1E17029A1EF0B4DC005FC2A7 /* icono-bolsocompra.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1702991EF0B4DC005FC2A7 /* icono-bolsocompra.png */; };
+		1E17C0331EF45F6700F2DC36 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E17C0321EF45F6700F2DC36 /* CustomPrintPageRenderer.swift */; };
+		1E2509111F6314B80060F968 /* ACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2509101F6314B80060F968 /* ACButton.swift */; };
+		1E2509131F631CEB0060F968 /* ACImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2509121F631CEB0060F968 /* ACImageView.swift */; };
+		1E25091E1F6359300060F968 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E2509161F63592F0060F968 /* Roboto-Black.ttf */; };
+		1E25091F1F6359300060F968 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E2509171F63592F0060F968 /* Roboto-Bold.ttf */; };
+		1E2509201F6359300060F968 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E2509181F63592F0060F968 /* Roboto-Light.ttf */; };
+		1E2509211F6359300060F968 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E2509191F6359300060F968 /* Roboto-Regular.ttf */; };
+		1E2509221F6359300060F968 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E25091A1F6359300060F968 /* Roboto-Thin.ttf */; };
+		1E2509231F6359300060F968 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E25091B1F6359300060F968 /* RobotoCondensed-Bold.ttf */; };
+		1E2509241F6359300060F968 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E25091C1F6359300060F968 /* RobotoCondensed-Light.ttf */; };
+		1E2509251F6359300060F968 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E25091D1F6359300060F968 /* RobotoCondensed-Regular.ttf */; };
+		1E3A7F4F1F05BFC900A25DA6 /* CustomCellCompra.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A7F511F05BFC900A25DA6 /* CustomCellCompra.xib */; };
+		1E55C72E1EF3427C003846D4 /* detallecuota.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E55C72B1EF3427C003846D4 /* detallecuota.html */; };
+		1E55C72F1EF3427C003846D4 /* ProyeccionCuota.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E55C72C1EF3427C003846D4 /* ProyeccionCuota.html */; };
+		1E55C7301EF3427C003846D4 /* ultimodetallecuota.html in Resources */ = {isa = PBXBuildFile; fileRef = 1E55C72D1EF3427C003846D4 /* ultimodetallecuota.html */; };
+		1E55C7321EF34420003846D4 /* CompositorReporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55C7311EF34420003846D4 /* CompositorReporte.swift */; };
+		1E55C7341EF37D98003846D4 /* VCPreviewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55C7331EF37D98003846D4 /* VCPreviewReport.swift */; };
+		1E58BA941F15656E00ABCCE7 /* icono2-83-5pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E58BA931F15656E00ABCCE7 /* icono2-83-5pt@2x.png */; };
+		1E5F5B491EF0C91600224D0B /* Tarjeta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F5B451EF0C91500224D0B /* Tarjeta+CoreDataClass.swift */; };
+		1E5F5B4A1EF0C91600224D0B /* Tarjeta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F5B461EF0C91600224D0B /* Tarjeta+CoreDataProperties.swift */; };
+		1E5F5B4C1EF0EA1600224D0B /* VCProyectarCompra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F5B4B1EF0EA1600224D0B /* VCProyectarCompra.swift */; };
+		1E60F65E1EE71CA600FE3127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E60F65D1EE71CA600FE3127 /* AppDelegate.swift */; };
+		1E60F6631EE71CA700FE3127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E60F6611EE71CA700FE3127 /* Main.storyboard */; };
+		1E60F6681EE71CA700FE3127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E60F6671EE71CA700FE3127 /* Assets.xcassets */; };
+		1E60F66B1EE71CA700FE3127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E60F6691EE71CA700FE3127 /* LaunchScreen.storyboard */; };
+		1E60F6741EE71D4E00FE3127 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E60F6721EE71D4E00FE3127 /* SideBarTableViewController.swift */; };
+		1E60F6751EE71D4E00FE3127 /* SideBlurBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E60F6731EE71D4E00FE3127 /* SideBlurBar.swift */; };
+		1E68BEB11F0D851600E76A07 /* icono2-20pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEA31F0D851600E76A07 /* icono2-20pt@3x.png */; };
+		1E68BEB21F0D851600E76A07 /* icono2-29pt@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEA41F0D851600E76A07 /* icono2-29pt@1x.png */; };
+		1E68BEB31F0D851600E76A07 /* icono2-29pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEA51F0D851600E76A07 /* icono2-29pt@2x.png */; };
+		1E68BEB41F0D851600E76A07 /* icono2-29pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEA61F0D851600E76A07 /* icono2-29pt@3x.png */; };
+		1E68BEB51F0D851600E76A07 /* icono2-40pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEA71F0D851600E76A07 /* icono2-40pt@2x.png */; };
+		1E68BEB61F0D851600E76A07 /* icono2-40pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEA81F0D851600E76A07 /* icono2-40pt@3x.png */; };
+		1E68BEB71F0D851600E76A07 /* icono2-60pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEA91F0D851600E76A07 /* icono2-60pt@3x.png */; };
+		1E68BEB81F0D851600E76A07 /* icono2-76pt@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEAA1F0D851600E76A07 /* icono2-76pt@1x.png */; };
+		1E68BEB91F0D851600E76A07 /* icono2-76pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEAB1F0D851600E76A07 /* icono2-76pt@2x.png */; };
+		1E68BEBB1F0D851600E76A07 /* icono2@768x768.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEAD1F0D851600E76A07 /* icono2@768x768.png */; };
+		1E68BEBC1F0D851600E76A07 /* icono2@1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEAE1F0D851600E76A07 /* icono2@1024x1024.png */; };
+		1E68BEBF1F0D859900E76A07 /* icono2-20pt@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEBD1F0D859900E76A07 /* icono2-20pt@1x.png */; };
+		1E68BEC01F0D859900E76A07 /* icono2-20pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E68BEBE1F0D859900E76A07 /* icono2-20pt@2x.png */; };
+		1E822B071F66C27500683EE2 /* DetalleExtracto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E822B061F66C27500683EE2 /* DetalleExtracto.swift */; };
+		1E822B091F67537C00683EE2 /* InfoExtracto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E822B081F67537C00683EE2 /* InfoExtracto.swift */; };
+		1E822B0D1F677C0A00683EE2 /* brand-local.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E822B0C1F677C0A00683EE2 /* brand-local.png */; };
+		1EB458911EE8435B00867C8E /* VCMasterTarjetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458901EE8435B00867C8E /* VCMasterTarjetas.swift */; };
+		1EB458931EE8444100867C8E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458921EE8444100867C8E /* UIColor.swift */; };
+		1EB458951EE870A500867C8E /* VCListaTarjetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458941EE870A500867C8E /* VCListaTarjetas.swift */; };
+		1EB4589B1EE8985100867C8E /* VCMasterCompras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4589A1EE8985100867C8E /* VCMasterCompras.swift */; };
+		1EB4589D1EE89B6A00867C8E /* VCListaCompras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4589C1EE89B6A00867C8E /* VCListaCompras.swift */; };
+		1EB458A01EE8A01F00867C8E /* SingleManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4589E1EE8A01F00867C8E /* SingleManagedObjectContext.swift */; };
+		1EB458A11EE8A01F00867C8E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4589F1EE8A01F00867C8E /* DataController.swift */; };
+		1EB458A31EE8A07000867C8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458A21EE8A07000867C8E /* Extensions.swift */; };
+		1EB458A51EE8A08F00867C8E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458A41EE8A08F00867C8E /* Global.swift */; };
+		1EB458A71EE8A0A100867C8E /* FileSystemLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458A61EE8A0A100867C8E /* FileSystemLib.swift */; };
+		1EB458AB1EE8A52500867C8E /* CustomCellTarjeta.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB458AA1EE8A52500867C8E /* CustomCellTarjeta.xib */; };
+		1EB458AF1EE8A99100867C8E /* CustomCellTarjeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458AE1EE8A99100867C8E /* CustomCellTarjeta.swift */; };
+		1EB458B31EE8B36600867C8E /* BDTarjetasCredito.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458B11EE8B36600867C8E /* BDTarjetasCredito.xcdatamodeld */; };
+		1EB458F61EE8D4A400867C8E /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB458F51EE8D4A400867C8E /* CoreDataExtensions.swift */; };
+		1ED25C1B1EEF76A000930CA9 /* CustomCellCompra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED25C1A1EEF76A000930CA9 /* CustomCellCompra.swift */; };
+		1EE3E0481EECA530005DF868 /* brand-mastercard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EE3E0451EECA530005DF868 /* brand-mastercard.jpg */; };
+		1EE3E0491EECA530005DF868 /* brand-dinersclub.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EE3E0461EECA530005DF868 /* brand-dinersclub.jpg */; };
+		1EE3E04B1EECA565005DF868 /* brand-americanexpress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EE3E04A1EECA565005DF868 /* brand-americanexpress.jpg */; };
+		1EE3E04D1EECA5AA005DF868 /* brand-visa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EE3E04C1EECA5AA005DF868 /* brand-visa.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1E0702A51EF1ADB00014AA16 /* Banca.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banca.swift; sourceTree = "<group>"; };
+		1E0702A71EF1BBA10014AA16 /* Compra+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compra+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E0702A81EF1BBA10014AA16 /* Compra+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compra+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E0702A91EF1BBA10014AA16 /* Proyeccion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Proyeccion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E0702AA1EF1BBA10014AA16 /* Proyeccion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Proyeccion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E17028B1EF07976005FC2A7 /* Extracto+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extracto+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E17028C1EF07976005FC2A7 /* Extracto+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extracto+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E17028D1EF07976005FC2A7 /* Detalle+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E17028E1EF07976005FC2A7 /* Detalle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E1702991EF0B4DC005FC2A7 /* icono-bolsocompra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono-bolsocompra.png"; sourceTree = "<group>"; };
+		1E17C0321EF45F6700F2DC36 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
+		1E1CA501210ACC6200C27353 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		1E2509101F6314B80060F968 /* ACButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACButton.swift; sourceTree = "<group>"; };
+		1E2509121F631CEB0060F968 /* ACImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACImageView.swift; sourceTree = "<group>"; };
+		1E2509161F63592F0060F968 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		1E2509171F63592F0060F968 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		1E2509181F63592F0060F968 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		1E2509191F6359300060F968 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		1E25091A1F6359300060F968 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		1E25091B1F6359300060F968 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		1E25091C1F6359300060F968 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		1E25091D1F6359300060F968 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		1E3A7F501F05BFC900A25DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomCellCompra.xib; sourceTree = "<group>"; };
+		1E55C72B1EF3427C003846D4 /* detallecuota.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = detallecuota.html; sourceTree = "<group>"; };
+		1E55C72C1EF3427C003846D4 /* ProyeccionCuota.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ProyeccionCuota.html; sourceTree = "<group>"; };
+		1E55C72D1EF3427C003846D4 /* ultimodetallecuota.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ultimodetallecuota.html; sourceTree = "<group>"; };
+		1E55C7311EF34420003846D4 /* CompositorReporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositorReporte.swift; sourceTree = "<group>"; };
+		1E55C7331EF37D98003846D4 /* VCPreviewReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPreviewReport.swift; sourceTree = "<group>"; };
+		1E58BA931F15656E00ABCCE7 /* icono2-83-5pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-83-5pt@2x.png"; sourceTree = "<group>"; };
+		1E5F5B451EF0C91500224D0B /* Tarjeta+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tarjeta+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1E5F5B461EF0C91600224D0B /* Tarjeta+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tarjeta+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1E5F5B4B1EF0EA1600224D0B /* VCProyectarCompra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCProyectarCompra.swift; sourceTree = "<group>"; };
+		1E60F65A1EE71CA600FE3127 /* Mis Tarjetas de Credito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mis Tarjetas de Credito.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E60F65D1EE71CA600FE3127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E60F6621EE71CA700FE3127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E60F6671EE71CA700FE3127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E60F66A1EE71CA700FE3127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E60F66C1EE71CA700FE3127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E60F6721EE71D4E00FE3127 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
+		1E60F6731EE71D4E00FE3127 /* SideBlurBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBlurBar.swift; sourceTree = "<group>"; };
+		1E68BEA31F0D851600E76A07 /* icono2-20pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-20pt@3x.png"; sourceTree = "<group>"; };
+		1E68BEA41F0D851600E76A07 /* icono2-29pt@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-29pt@1x.png"; sourceTree = "<group>"; };
+		1E68BEA51F0D851600E76A07 /* icono2-29pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-29pt@2x.png"; sourceTree = "<group>"; };
+		1E68BEA61F0D851600E76A07 /* icono2-29pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-29pt@3x.png"; sourceTree = "<group>"; };
+		1E68BEA71F0D851600E76A07 /* icono2-40pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-40pt@2x.png"; sourceTree = "<group>"; };
+		1E68BEA81F0D851600E76A07 /* icono2-40pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-40pt@3x.png"; sourceTree = "<group>"; };
+		1E68BEA91F0D851600E76A07 /* icono2-60pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-60pt@3x.png"; sourceTree = "<group>"; };
+		1E68BEAA1F0D851600E76A07 /* icono2-76pt@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-76pt@1x.png"; sourceTree = "<group>"; };
+		1E68BEAB1F0D851600E76A07 /* icono2-76pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-76pt@2x.png"; sourceTree = "<group>"; };
+		1E68BEAD1F0D851600E76A07 /* icono2@768x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2@768x768.png"; sourceTree = "<group>"; };
+		1E68BEAE1F0D851600E76A07 /* icono2@1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2@1024x1024.png"; sourceTree = "<group>"; };
+		1E68BEBD1F0D859900E76A07 /* icono2-20pt@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-20pt@1x.png"; sourceTree = "<group>"; };
+		1E68BEBE1F0D859900E76A07 /* icono2-20pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono2-20pt@2x.png"; sourceTree = "<group>"; };
+		1E822B061F66C27500683EE2 /* DetalleExtracto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleExtracto.swift; sourceTree = "<group>"; };
+		1E822B081F67537C00683EE2 /* InfoExtracto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoExtracto.swift; sourceTree = "<group>"; };
+		1E822B0C1F677C0A00683EE2 /* brand-local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brand-local.png"; sourceTree = "<group>"; };
+		1EB458901EE8435B00867C8E /* VCMasterTarjetas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMasterTarjetas.swift; sourceTree = "<group>"; };
+		1EB458921EE8444100867C8E /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1EB458941EE870A500867C8E /* VCListaTarjetas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCListaTarjetas.swift; sourceTree = "<group>"; };
+		1EB4589A1EE8985100867C8E /* VCMasterCompras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMasterCompras.swift; sourceTree = "<group>"; };
+		1EB4589C1EE89B6A00867C8E /* VCListaCompras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCListaCompras.swift; sourceTree = "<group>"; };
+		1EB4589E1EE8A01F00867C8E /* SingleManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleManagedObjectContext.swift; path = "Mis Tarjetas de Credito/SingleManagedObjectContext.swift"; sourceTree = "<group>"; };
+		1EB4589F1EE8A01F00867C8E /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = "Mis Tarjetas de Credito/DataController.swift"; sourceTree = "<group>"; };
+		1EB458A21EE8A07000867C8E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1EB458A41EE8A08F00867C8E /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		1EB458A61EE8A0A100867C8E /* FileSystemLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemLib.swift; sourceTree = "<group>"; };
+		1EB458AA1EE8A52500867C8E /* CustomCellTarjeta.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellTarjeta.xib; sourceTree = "<group>"; };
+		1EB458AE1EE8A99100867C8E /* CustomCellTarjeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellTarjeta.swift; sourceTree = "<group>"; };
+		1EB458B21EE8B36600867C8E /* BDTarjetasCredito.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BDTarjetasCredito.xcdatamodel; sourceTree = "<group>"; };
+		1EB458F51EE8D4A400867C8E /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
+		1ED25C1A1EEF76A000930CA9 /* CustomCellCompra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellCompra.swift; sourceTree = "<group>"; };
+		1EE3E0451EECA530005DF868 /* brand-mastercard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brand-mastercard.jpg"; sourceTree = "<group>"; };
+		1EE3E0461EECA530005DF868 /* brand-dinersclub.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brand-dinersclub.jpg"; sourceTree = "<group>"; };
+		1EE3E04A1EECA565005DF868 /* brand-americanexpress.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brand-americanexpress.jpg"; sourceTree = "<group>"; };
+		1EE3E04C1EECA5AA005DF868 /* brand-visa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brand-visa.jpg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E60F6571EE71CA600FE3127 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E1CA500210ACC6000C27353 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E1CA501210ACC6200C27353 /* libstdc++.6.0.9.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E2509141F633FAF0060F968 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EB458901EE8435B00867C8E /* VCMasterTarjetas.swift */,
+				1EB458941EE870A500867C8E /* VCListaTarjetas.swift */,
+				1EB4589A1EE8985100867C8E /* VCMasterCompras.swift */,
+				1EB4589C1EE89B6A00867C8E /* VCListaCompras.swift */,
+				1E5F5B4B1EF0EA1600224D0B /* VCProyectarCompra.swift */,
+				1E55C7331EF37D98003846D4 /* VCPreviewReport.swift */,
+			);
+			name = controllers;
+			path = "Mis Tarjetas de Credito";
+			sourceTree = "<group>";
+		};
+		1E2509151F6358EB0060F968 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1E2509161F63592F0060F968 /* Roboto-Black.ttf */,
+				1E2509171F63592F0060F968 /* Roboto-Bold.ttf */,
+				1E2509181F63592F0060F968 /* Roboto-Light.ttf */,
+				1E2509191F6359300060F968 /* Roboto-Regular.ttf */,
+				1E25091A1F6359300060F968 /* Roboto-Thin.ttf */,
+				1E25091B1F6359300060F968 /* RobotoCondensed-Bold.ttf */,
+				1E25091C1F6359300060F968 /* RobotoCondensed-Light.ttf */,
+				1E25091D1F6359300060F968 /* RobotoCondensed-Regular.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		1E2509261F635A910060F968 /* templates */ = {
+			isa = PBXGroup;
+			children = (
+				1E55C72B1EF3427C003846D4 /* detallecuota.html */,
+				1E55C72C1EF3427C003846D4 /* ProyeccionCuota.html */,
+				1E55C72D1EF3427C003846D4 /* ultimodetallecuota.html */,
+			);
+			name = templates;
+			sourceTree = "<group>";
+		};
+		1E55C72A1EF34269003846D4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				1E2509151F6358EB0060F968 /* fonts */,
+				1EB458F71EE8DA5300867C8E /* images */,
+				1E2509261F635A910060F968 /* templates */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		1E60F6511EE71CA600FE3127 = {
+			isa = PBXGroup;
+			children = (
+				1E55C72A1EF34269003846D4 /* resources */,
+				1EB458F41EE8D45100867C8E /* coredata */,
+				1EB458B01EE8AB5A00867C8E /* components */,
+				1EB458A81EE8A0D200867C8E /* sidebar */,
+				1EB458A91EE8A0EC00867C8E /* utils */,
+				1E2509141F633FAF0060F968 /* controllers */,
+				1E60F65C1EE71CA600FE3127 /* Mis Tarjetas de Credito */,
+				1E60F65B1EE71CA600FE3127 /* Products */,
+				1E1CA500210ACC6000C27353 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1E60F65B1EE71CA600FE3127 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E60F65A1EE71CA600FE3127 /* Mis Tarjetas de Credito.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E60F65C1EE71CA600FE3127 /* Mis Tarjetas de Credito */ = {
+			isa = PBXGroup;
+			children = (
+				1E60F65D1EE71CA600FE3127 /* AppDelegate.swift */,
+				1E60F6611EE71CA700FE3127 /* Main.storyboard */,
+				1E60F6691EE71CA700FE3127 /* LaunchScreen.storyboard */,
+				1E60F6671EE71CA700FE3127 /* Assets.xcassets */,
+				1E60F66C1EE71CA700FE3127 /* Info.plist */,
+			);
+			path = "Mis Tarjetas de Credito";
+			sourceTree = "<group>";
+		};
+		1EB458A81EE8A0D200867C8E /* sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				1E60F6721EE71D4E00FE3127 /* SideBarTableViewController.swift */,
+				1E60F6731EE71D4E00FE3127 /* SideBlurBar.swift */,
+			);
+			name = sidebar;
+			path = "Mis Tarjetas de Credito";
+			sourceTree = "<group>";
+		};
+		1EB458A91EE8A0EC00867C8E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				1EB458921EE8444100867C8E /* UIColor.swift */,
+				1EB458A41EE8A08F00867C8E /* Global.swift */,
+				1EB458A21EE8A07000867C8E /* Extensions.swift */,
+				1EB458A61EE8A0A100867C8E /* FileSystemLib.swift */,
+				1E0702A51EF1ADB00014AA16 /* Banca.swift */,
+				1E55C7311EF34420003846D4 /* CompositorReporte.swift */,
+				1E17C0321EF45F6700F2DC36 /* CustomPrintPageRenderer.swift */,
+				1E822B061F66C27500683EE2 /* DetalleExtracto.swift */,
+				1E822B081F67537C00683EE2 /* InfoExtracto.swift */,
+			);
+			name = utils;
+			path = "Mis Tarjetas de Credito";
+			sourceTree = "<group>";
+		};
+		1EB458B01EE8AB5A00867C8E /* components */ = {
+			isa = PBXGroup;
+			children = (
+				1EB458AA1EE8A52500867C8E /* CustomCellTarjeta.xib */,
+				1EB458AE1EE8A99100867C8E /* CustomCellTarjeta.swift */,
+				1E3A7F511F05BFC900A25DA6 /* CustomCellCompra.xib */,
+				1ED25C1A1EEF76A000930CA9 /* CustomCellCompra.swift */,
+				1E2509101F6314B80060F968 /* ACButton.swift */,
+				1E2509121F631CEB0060F968 /* ACImageView.swift */,
+			);
+			name = components;
+			path = "Mis Tarjetas de Credito";
+			sourceTree = "<group>";
+		};
+		1EB458F41EE8D45100867C8E /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				1EB458B11EE8B36600867C8E /* BDTarjetasCredito.xcdatamodeld */,
+				1EB4589E1EE8A01F00867C8E /* SingleManagedObjectContext.swift */,
+				1EB4589F1EE8A01F00867C8E /* DataController.swift */,
+				1EB458F51EE8D4A400867C8E /* CoreDataExtensions.swift */,
+				1E5F5B451EF0C91500224D0B /* Tarjeta+CoreDataClass.swift */,
+				1E5F5B461EF0C91600224D0B /* Tarjeta+CoreDataProperties.swift */,
+				1E17028B1EF07976005FC2A7 /* Extracto+CoreDataClass.swift */,
+				1E17028C1EF07976005FC2A7 /* Extracto+CoreDataProperties.swift */,
+				1E17028D1EF07976005FC2A7 /* Detalle+CoreDataClass.swift */,
+				1E17028E1EF07976005FC2A7 /* Detalle+CoreDataProperties.swift */,
+				1E0702A71EF1BBA10014AA16 /* Compra+CoreDataClass.swift */,
+				1E0702A81EF1BBA10014AA16 /* Compra+CoreDataProperties.swift */,
+				1E0702A91EF1BBA10014AA16 /* Proyeccion+CoreDataClass.swift */,
+				1E0702AA1EF1BBA10014AA16 /* Proyeccion+CoreDataProperties.swift */,
+			);
+			name = coredata;
+			sourceTree = "<group>";
+		};
+		1EB458F71EE8DA5300867C8E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1ED42EE61F0603C600E06B6A /* iconos */,
+				1E1702991EF0B4DC005FC2A7 /* icono-bolsocompra.png */,
+				1EE3E04C1EECA5AA005DF868 /* brand-visa.jpg */,
+				1EE3E0451EECA530005DF868 /* brand-mastercard.jpg */,
+				1EE3E0461EECA530005DF868 /* brand-dinersclub.jpg */,
+				1EE3E04A1EECA565005DF868 /* brand-americanexpress.jpg */,
+				1E822B0C1F677C0A00683EE2 /* brand-local.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		1ED42EE61F0603C600E06B6A /* iconos */ = {
+			isa = PBXGroup;
+			children = (
+				1E68BEBD1F0D859900E76A07 /* icono2-20pt@1x.png */,
+				1E68BEBE1F0D859900E76A07 /* icono2-20pt@2x.png */,
+				1E68BEA31F0D851600E76A07 /* icono2-20pt@3x.png */,
+				1E68BEA41F0D851600E76A07 /* icono2-29pt@1x.png */,
+				1E68BEA51F0D851600E76A07 /* icono2-29pt@2x.png */,
+				1E68BEA61F0D851600E76A07 /* icono2-29pt@3x.png */,
+				1E68BEA71F0D851600E76A07 /* icono2-40pt@2x.png */,
+				1E68BEA81F0D851600E76A07 /* icono2-40pt@3x.png */,
+				1E68BEA91F0D851600E76A07 /* icono2-60pt@3x.png */,
+				1E68BEAA1F0D851600E76A07 /* icono2-76pt@1x.png */,
+				1E68BEAB1F0D851600E76A07 /* icono2-76pt@2x.png */,
+				1E58BA931F15656E00ABCCE7 /* icono2-83-5pt@2x.png */,
+				1E68BEAD1F0D851600E76A07 /* icono2@768x768.png */,
+				1E68BEAE1F0D851600E76A07 /* icono2@1024x1024.png */,
+			);
+			name = iconos;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E60F6591EE71CA600FE3127 /* Mis Tarjetas de Credito */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E60F66F1EE71CA700FE3127 /* Build configuration list for PBXNativeTarget "Mis Tarjetas de Credito" */;
+			buildPhases = (
+				1E60F6561EE71CA600FE3127 /* Sources */,
+				1E60F6571EE71CA600FE3127 /* Frameworks */,
+				1E60F6581EE71CA600FE3127 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mis Tarjetas de Credito";
+			productName = "Mis Tarjetas de Credito";
+			productReference = 1E60F65A1EE71CA600FE3127 /* Mis Tarjetas de Credito.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E60F6521EE71CA600FE3127 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Américo Cantillo Gutiérrez";
+				TargetAttributes = {
+					1E60F6591EE71CA600FE3127 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = DVSM299CEH;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1E60F6551EE71CA600FE3127 /* Build configuration list for PBXProject "Mis Tarjetas de Credito" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E60F6511EE71CA600FE3127;
+			productRefGroup = 1E60F65B1EE71CA600FE3127 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E60F6591EE71CA600FE3127 /* Mis Tarjetas de Credito */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E60F6581EE71CA600FE3127 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E68BEB11F0D851600E76A07 /* icono2-20pt@3x.png in Resources */,
+				1E68BEB61F0D851600E76A07 /* icono2-40pt@3x.png in Resources */,
+				1E2509211F6359300060F968 /* Roboto-Regular.ttf in Resources */,
+				1E25091F1F6359300060F968 /* Roboto-Bold.ttf in Resources */,
+				1E2509241F6359300060F968 /* RobotoCondensed-Light.ttf in Resources */,
+				1E17029A1EF0B4DC005FC2A7 /* icono-bolsocompra.png in Resources */,
+				1E2509251F6359300060F968 /* RobotoCondensed-Regular.ttf in Resources */,
+				1EE3E0491EECA530005DF868 /* brand-dinersclub.jpg in Resources */,
+				1EE3E0481EECA530005DF868 /* brand-mastercard.jpg in Resources */,
+				1E3A7F4F1F05BFC900A25DA6 /* CustomCellCompra.xib in Resources */,
+				1E68BEB81F0D851600E76A07 /* icono2-76pt@1x.png in Resources */,
+				1E25091E1F6359300060F968 /* Roboto-Black.ttf in Resources */,
+				1E2509201F6359300060F968 /* Roboto-Light.ttf in Resources */,
+				1E55C72F1EF3427C003846D4 /* ProyeccionCuota.html in Resources */,
+				1E68BEBF1F0D859900E76A07 /* icono2-20pt@1x.png in Resources */,
+				1E68BEB91F0D851600E76A07 /* icono2-76pt@2x.png in Resources */,
+				1EE3E04B1EECA565005DF868 /* brand-americanexpress.jpg in Resources */,
+				1E60F66B1EE71CA700FE3127 /* LaunchScreen.storyboard in Resources */,
+				1E68BEB21F0D851600E76A07 /* icono2-29pt@1x.png in Resources */,
+				1E68BEB31F0D851600E76A07 /* icono2-29pt@2x.png in Resources */,
+				1EE3E04D1EECA5AA005DF868 /* brand-visa.jpg in Resources */,
+				1E60F6681EE71CA700FE3127 /* Assets.xcassets in Resources */,
+				1E58BA941F15656E00ABCCE7 /* icono2-83-5pt@2x.png in Resources */,
+				1E60F6631EE71CA700FE3127 /* Main.storyboard in Resources */,
+				1E68BEBC1F0D851600E76A07 /* icono2@1024x1024.png in Resources */,
+				1E68BEC01F0D859900E76A07 /* icono2-20pt@2x.png in Resources */,
+				1E68BEB51F0D851600E76A07 /* icono2-40pt@2x.png in Resources */,
+				1E2509221F6359300060F968 /* Roboto-Thin.ttf in Resources */,
+				1E55C7301EF3427C003846D4 /* ultimodetallecuota.html in Resources */,
+				1EB458AB1EE8A52500867C8E /* CustomCellTarjeta.xib in Resources */,
+				1E68BEB41F0D851600E76A07 /* icono2-29pt@3x.png in Resources */,
+				1E2509231F6359300060F968 /* RobotoCondensed-Bold.ttf in Resources */,
+				1E822B0D1F677C0A00683EE2 /* brand-local.png in Resources */,
+				1E68BEBB1F0D851600E76A07 /* icono2@768x768.png in Resources */,
+				1E68BEB71F0D851600E76A07 /* icono2-60pt@3x.png in Resources */,
+				1E55C72E1EF3427C003846D4 /* detallecuota.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E60F6561EE71CA600FE3127 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E822B071F66C27500683EE2 /* DetalleExtracto.swift in Sources */,
+				1E60F6741EE71D4E00FE3127 /* SideBarTableViewController.swift in Sources */,
+				1EB458931EE8444100867C8E /* UIColor.swift in Sources */,
+				1E55C7341EF37D98003846D4 /* VCPreviewReport.swift in Sources */,
+				1EB4589B1EE8985100867C8E /* VCMasterCompras.swift in Sources */,
+				1E1702961EF07977005FC2A7 /* Extracto+CoreDataProperties.swift in Sources */,
+				1EB4589D1EE89B6A00867C8E /* VCListaCompras.swift in Sources */,
+				1EB458911EE8435B00867C8E /* VCMasterTarjetas.swift in Sources */,
+				1EB458A51EE8A08F00867C8E /* Global.swift in Sources */,
+				1E2509131F631CEB0060F968 /* ACImageView.swift in Sources */,
+				1ED25C1B1EEF76A000930CA9 /* CustomCellCompra.swift in Sources */,
+				1EB458A11EE8A01F00867C8E /* DataController.swift in Sources */,
+				1E5F5B4A1EF0C91600224D0B /* Tarjeta+CoreDataProperties.swift in Sources */,
+				1EB458A31EE8A07000867C8E /* Extensions.swift in Sources */,
+				1E60F6751EE71D4E00FE3127 /* SideBlurBar.swift in Sources */,
+				1EB458AF1EE8A99100867C8E /* CustomCellTarjeta.swift in Sources */,
+				1E0702AB1EF1BBA10014AA16 /* Compra+CoreDataClass.swift in Sources */,
+				1E1702951EF07977005FC2A7 /* Extracto+CoreDataClass.swift in Sources */,
+				1E1702981EF07977005FC2A7 /* Detalle+CoreDataProperties.swift in Sources */,
+				1EB458951EE870A500867C8E /* VCListaTarjetas.swift in Sources */,
+				1EB458A01EE8A01F00867C8E /* SingleManagedObjectContext.swift in Sources */,
+				1E55C7321EF34420003846D4 /* CompositorReporte.swift in Sources */,
+				1E17C0331EF45F6700F2DC36 /* CustomPrintPageRenderer.swift in Sources */,
+				1E0702AC1EF1BBA10014AA16 /* Compra+CoreDataProperties.swift in Sources */,
+				1E5F5B491EF0C91600224D0B /* Tarjeta+CoreDataClass.swift in Sources */,
+				1E0702AD1EF1BBA10014AA16 /* Proyeccion+CoreDataClass.swift in Sources */,
+				1EB458A71EE8A0A100867C8E /* FileSystemLib.swift in Sources */,
+				1E822B091F67537C00683EE2 /* InfoExtracto.swift in Sources */,
+				1E5F5B4C1EF0EA1600224D0B /* VCProyectarCompra.swift in Sources */,
+				1E1702971EF07977005FC2A7 /* Detalle+CoreDataClass.swift in Sources */,
+				1E0702AE1EF1BBA10014AA16 /* Proyeccion+CoreDataProperties.swift in Sources */,
+				1EB458F61EE8D4A400867C8E /* CoreDataExtensions.swift in Sources */,
+				1E0702A61EF1ADB00014AA16 /* Banca.swift in Sources */,
+				1E60F65E1EE71CA600FE3127 /* AppDelegate.swift in Sources */,
+				1E2509111F6314B80060F968 /* ACButton.swift in Sources */,
+				1EB458B31EE8B36600867C8E /* BDTarjetasCredito.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1E3A7F511F05BFC900A25DA6 /* CustomCellCompra.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E3A7F501F05BFC900A25DA6 /* Base */,
+			);
+			name = CustomCellCompra.xib;
+			sourceTree = "<group>";
+		};
+		1E60F6611EE71CA700FE3127 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E60F6621EE71CA700FE3127 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E60F6691EE71CA700FE3127 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E60F66A1EE71CA700FE3127 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E60F66D1EE71CA700FE3127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E60F66E1EE71CA700FE3127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E60F6701EE71CA700FE3127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVSM299CEH;
+				INFOPLIST_FILE = "Mis Tarjetas de Credito/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jetainmemsoft.Mis-Tarjetas-de-Credito";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1E60F6711EE71CA700FE3127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVSM299CEH;
+				INFOPLIST_FILE = "Mis Tarjetas de Credito/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jetainmemsoft.Mis-Tarjetas-de-Credito";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E60F6551EE71CA600FE3127 /* Build configuration list for PBXProject "Mis Tarjetas de Credito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E60F66D1EE71CA700FE3127 /* Debug */,
+				1E60F66E1EE71CA700FE3127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E60F66F1EE71CA700FE3127 /* Build configuration list for PBXNativeTarget "Mis Tarjetas de Credito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E60F6701EE71CA700FE3127 /* Debug */,
+				1E60F6711EE71CA700FE3127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1EB458B11EE8B36600867C8E /* BDTarjetasCredito.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1EB458B21EE8B36600867C8E /* BDTarjetasCredito.xcdatamodel */,
+			);
+			currentVersion = 1EB458B21EE8B36600867C8E /* BDTarjetasCredito.xcdatamodel */;
+			name = BDTarjetasCredito.xcdatamodeld;
+			path = "Mis Tarjetas de Credito/BDTarjetasCredito.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1E60F6521EE71CA600FE3127 /* Project object */;
+}

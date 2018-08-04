@@ -1,0 +1,111 @@
+
+/* Class = "UILabel"; text = "Pagarías en total:"; ObjectID = "0yG-t9-Fe4"; */
+"0yG-t9-Fe4.text" = "Pagarías en total:";
+
+/* Class = "UILabel"; text = "Valor de la compra:"; ObjectID = "238-Cu-dk9"; */
+"238-Cu-dk9.text" = "Valor de la compra:";
+
+/* Class = "UILabel"; text = "Tasa EA aplicada:"; ObjectID = "2bK-dK-12l"; */
+"2bK-dK-12l.text" = "Annual Percentage Rate:";
+
+/* Class = "UITextField"; placeholder = "Valor de la compra"; ObjectID = "7Iv-lL-bU7"; */
+"7Iv-lL-bU7.placeholder" = "Valor de la compra";
+
+/* Class = "UIButton"; normalTitle = "Biblioteca"; ObjectID = "BY6-Wf-5G5"; */
+"BY6-Wf-5G5.normalTitle" = "Biblioteca";
+
+/* Class = "UITextField"; placeholder = "Descripción de la compra"; ObjectID = "CT1-eG-Pt3"; */
+"CT1-eG-Pt3.placeholder" = "Descripción de la compra";
+
+/* Class = "UILabel"; text = "Producto o servicio"; ObjectID = "DMT-iA-ghR"; */
+"DMT-iA-ghR.text" = "Producto o servicio";
+
+/* Class = "UITextField"; placeholder = "TEA vigente para los consumos"; ObjectID = "Fbv-De-Lpx"; */
+"Fbv-De-Lpx.placeholder" = "TEA vigente para los consumos";
+
+/* Class = "UIButton"; normalTitle = "Capturar"; ObjectID = "Ff7-oK-HMq"; */
+"Ff7-oK-HMq.normalTitle" = "Capturar";
+
+/* Class = "UILabel"; text = "Cuotas a proyectar:"; ObjectID = "Hep-c6-ioI"; */
+"Hep-c6-ioI.text" = "Cuotas a proyectar:";
+
+/* Class = "UITextField"; placeholder = "Descripción de la compra"; ObjectID = "I6M-X4-AXu"; */
+"I6M-X4-AXu.placeholder" = "Descripción de la compra";
+
+/* Class = "UITextField"; placeholder = "Número de Tarjeta de Crédito"; ObjectID = "IHB-EL-aM3"; */
+"IHB-EL-aM3.placeholder" = "Número de Tarjeta de Crédito";
+
+/* Class = "UILabel"; text = "Valor"; ObjectID = "IOl-Lw-PkS"; */
+"IOl-Lw-PkS.text" = "Valor";
+
+/* Class = "UITextField"; placeholder = "Descripción de la compra"; ObjectID = "IVG-Va-Mzs"; */
+"IVG-Va-Mzs.placeholder" = "Descripción de la compra";
+
+/* Class = "UITextField"; placeholder = "Plazo en meses"; ObjectID = "JQM-NX-tvN"; */
+"JQM-NX-tvN.placeholder" = "Plazo en meses";
+
+/* Class = "UILabel"; text = "Plazo"; ObjectID = "Lqi-Ng-qVX"; */
+"Lqi-Ng-qVX.text" = "Plazo";
+
+/* Class = "UIButton"; normalTitle = "Ver Proyección"; ObjectID = "LvW-zG-N44"; */
+"LvW-zG-N44.normalTitle" = "Ver Proyección";
+
+/* Class = "UILabel"; text = "Tasa Efectiva Anual (TEA) Vigente"; ObjectID = "YLN-VU-cjh"; */
+"YLN-VU-cjh.text" = "Tasa Efectiva Anual (TEA) Vigente";
+
+/* Class = "UITextField"; placeholder = "Establecimiento comercial"; ObjectID = "Yra-p8-j0T"; */
+"Yra-p8-j0T.placeholder" = "Establecimiento comercial";
+
+/* Class = "UILabel"; text = "Fecha de compra"; ObjectID = "Zu5-kb-1kh"; */
+"Zu5-kb-1kh.text" = "Fecha de compra";
+
+/* Class = "UITextField"; placeholder = "Franquicia de la tarjeta"; ObjectID = "bDv-iP-DPV"; */
+"bDv-iP-DPV.placeholder" = "Franquicia de la tarjeta";
+
+/* Class = "UILabel"; text = "Banco"; ObjectID = "fbI-Kw-PaX"; */
+"fbI-Kw-PaX.text" = "Banco";
+
+/* Class = "UILabel"; text = "Comercio donde se realiza la compra"; ObjectID = "gEb-EH-Paa"; */
+"gEb-EH-Paa.text" = "Comercio donde se realiza la compra";
+
+/* Class = "UITextField"; placeholder = "Descripción de la compra"; ObjectID = "gHw-o9-BbT"; */
+"gHw-o9-BbT.placeholder" = "Descripción de la compra";
+
+/* Class = "UILabel"; text = "Cupo asignado"; ObjectID = "gnm-qB-bKI"; */
+"gnm-qB-bKI.text" = "Cupo asignado";
+
+/* Class = "UITextField"; placeholder = "Fecha de la compra"; ObjectID = "ih4-bc-jFS"; */
+"ih4-bc-jFS.placeholder" = "Fecha de la compra";
+
+/* Class = "UILabel"; text = "Número de tarjeta"; ObjectID = "lQh-mb-Unu"; */
+"lQh-mb-Unu.text" = "Número de tarjeta";
+
+/* Class = "UITextField"; placeholder = "Cupo asignado"; ObjectID = "mWU-Af-0iY"; */
+"mWU-Af-0iY.placeholder" = "Cupo asignado";
+
+/* Class = "UIButton"; normalTitle = "Calcular Pago"; ObjectID = "nFS-HM-PEu"; */
+"nFS-HM-PEu.normalTitle" = "Calcular Pago";
+
+/* Class = "UILabel"; text = "Franquicia"; ObjectID = "nQw-9X-7d8"; */
+"nQw-9X-7d8.text" = "Franquicia";
+
+/* Class = "UIButton"; normalTitle = "Calcular Cuotas"; ObjectID = "nbg-Oc-8sO"; */
+"nbg-Oc-8sO.normalTitle" = "Calcular Cuotas";
+
+/* Class = "UITextField"; placeholder = "Plazo en meses"; ObjectID = "nnb-YO-9Sp"; */
+"nnb-YO-9Sp.placeholder" = "Plazo en meses";
+
+/* Class = "UILabel"; text = "Tasa Efec. Anual"; ObjectID = "nyx-1r-WQ9"; */
+"nyx-1r-WQ9.text" = "Tasa Efec. Anual";
+
+/* Class = "UITextField"; placeholder = "Descripción de la compra"; ObjectID = "sdT-LK-bK7"; */
+"sdT-LK-bK7.placeholder" = "Descripción de la compra";
+
+/* Class = "UITextField"; placeholder = "Descripción de la compra"; ObjectID = "tBO-Dx-0JV"; */
+"tBO-Dx-0JV.placeholder" = "Descripción de la compra";
+
+/* Class = "UILabel"; text = "Pagarías en intereses:"; ObjectID = "wTI-lj-6hc"; */
+"wTI-lj-6hc.text" = "Pagarías en intereses:";
+
+/* Class = "UITextField"; placeholder = "Nombre de la entidad financiera"; ObjectID = "y4D-VJ-TA4"; */
+"y4D-VJ-TA4.placeholder" = "Nombre de la entidad financiera";
