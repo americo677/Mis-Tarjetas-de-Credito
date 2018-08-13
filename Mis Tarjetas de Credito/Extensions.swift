@@ -424,85 +424,146 @@ extension UIViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-/*
-extension UIViewController: UITextFieldDelegate {
+extension Double {
+    func doubleFormatter(decimales: Int, estilo: NumberFormatter.Style = .none) -> String {
+        let fmt = NumberFormatter()
+        
+        fmt.numberStyle = estilo
+        fmt.maximumFractionDigits = decimales
+        
+        return fmt.string(from: NSNumber.init(value: self))!
+    }
+}
+
+extension Float {
+    func floatFormatter(decimales: Int, estilo: NumberFormatter.Style = .none) -> String {
+        let fmt = NumberFormatter()
+        
+        fmt.numberStyle = estilo
+        fmt.maximumFractionDigits = decimales
+        
+        return fmt.string(from: NSNumber.init(value: self))!
+    }
+}
+
+extension String {
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.activeTextField = textField
-        print("on trigger: \(activeTextField.text!)")
+    static let numberFormatter = NumberFormatter()
+    
+    func getFilenameWithoutExtension() -> String {
+        return URL(fileURLWithPath: self).deletingPathExtension().lastPathComponent
+    }
+    
+    func getFileExtension() -> String {
+        return (self as NSString).pathExtension
+    }
+    
+    func occurrencies(_ chr: Character) -> Int {
+        var count: Int = 0
+        let chars = Array(self)
+        
+        for char in chars {
+            if (chr == char) {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func doubleValue() -> Double {
+        
+        let value: NSNumber = NSNumber.init(value: 0)
+        String.numberFormatter.maximumFractionDigits = 0
+        String.numberFormatter.numberStyle = .none
+
+        if let result: NSNumber = String.numberFormatter.number(from: self) {
+            return result.doubleValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result: NSNumber = String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            }
+        }
+
+        String.numberFormatter.decimalSeparator = "."
+        String.numberFormatter.maximumFractionDigits = 2
+
+        if let result: NSNumber = String.numberFormatter.number(from: self) {
+            return result.doubleValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result: NSNumber = String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            }
+        }
+
+        String.numberFormatter.decimalSeparator = "."
+        String.numberFormatter.numberStyle = .currency
+        String.numberFormatter.maximumFractionDigits = 2
+
+        if let result: NSNumber = String.numberFormatter.number(from: self) {
+            return result.doubleValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result: NSNumber = String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            }
+        }
+
+        return value.doubleValue
+    }
+    
+    func floatValue() -> Float {
+        let value: NSNumber = NSNumber.init(value: 0)
+
+        String.numberFormatter.decimalSeparator = "."
+        String.numberFormatter.maximumFractionDigits = 0
+        String.numberFormatter.numberStyle = .none
+        
+        if let result: NSNumber = String.numberFormatter.number(from: self) {
+            return result.floatValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result: NSNumber = String.numberFormatter.number(from: self) {
+                return result.floatValue
+            }
+        }
+
+        String.numberFormatter.decimalSeparator = "."
+        String.numberFormatter.maximumFractionDigits = 2
+        
+        if let result: NSNumber = String.numberFormatter.number(from: self) {
+            return result.floatValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result: NSNumber = String.numberFormatter.number(from: self) {
+                return result.floatValue
+            }
+        }
+
+        String.numberFormatter.decimalSeparator = "."
+        String.numberFormatter.maximumFractionDigits = 2
+        String.numberFormatter.numberStyle = .currency
+        
+        if let result: NSNumber = String.numberFormatter.number(from: self) {
+            return result.floatValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result: NSNumber = String.numberFormatter.number(from: self) {
+                return result.floatValue
+            }
+        }
+
+        return value.floatValue
+    }
+    
+    func doubleFormatter(decimales: Int, estilo: NumberFormatter.Style = .none) -> String {
+        let fmt = NumberFormatter()
+        
+        fmt.numberStyle = estilo
+        fmt.maximumFractionDigits = decimales
+        
+        return fmt.string(from: NSNumber.init(value: self.doubleValue()))!
     }
     
 }
-*/
-
-/*
-extension Persona {
-    func nombreCompleto(_ apellidoPrimero: Bool = false) -> String {
-        var nombre: String?
-        if !apellidoPrimero {
-            if self.nombre != nil {
-                nombre = self.nombre! + (self.apellido != nil ? " " + self.apellido!: "")
-            } else {
-                nombre = (self.apellido != nil ? " " + self.apellido!: "")
-            }
-        } else {
-            if self.apellido != nil {
-                nombre = self.apellido! + (self.nombre != nil ? " " + self.nombre!: "")
-            } else {
-                nombre = (self.nombre != nil ? " " + self.nombre!: "")
-            }
-        }
-        return nombre!
-    }
-    
-    func addToRegalos(regalo: Regalo) {
-        let regalos = self.mutableSetValue(forKey: "regalos")
-        regalos.add(regalo)
-    }
-    
-    func removeFromRegalos(regalo: Regalo) {
-        let regalos = self.mutableSetValue(forKey: "regalos")
-        regalos.remove(regalo)
-    }
-    
-    func ordenaRegalosPorFecha() -> [AnyObject] {
-        let regalos = self.mutableSetValue(forKey: "regalos").sorted(by: { (($0 as! Regalo).cuando as! Date) > (($1  as! Regalo).cuando as! Date)}) as [AnyObject]
-        
-        return regalos
-    }
-    
-    func obtenerUltimoRegalo() -> CRegalo? {
-        let regalos = self.mutableSetValue(forKey: "regalos").sorted(by: { (($0 as! Regalo).cuando as! Date) > (($1  as! Regalo).cuando as! Date)}) as [AnyObject]
-        
-        let regalo = CRegalo()
-
-        if regalos.count > 0 {
-            let cdregalo = (regalos.first as! Regalo) as Regalo
-            regalo.cuando = cdregalo.cuando! as Date
-            regalo.descripcion = cdregalo.descripcion
-            regalo.motivo = cdregalo.motivo
-            regalo.para = cdregalo.para
-            
-        } else {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy"
-            regalo.cuando = formatter.date(from: "01/01/1000")! as Date?
-        }
-        
-        return regalo
-    }
-    
-    func obtenerFechaMasRecienteDeRegalo() -> Date {
-        let regalos = self.mutableSetValue(forKey: "regalos").sorted(by: { (($0 as! Regalo).cuando as! Date) > (($1  as! Regalo).cuando as! Date)}) as [AnyObject]
-        
-        if regalos.count > 0 {
-            let fecha = ((regalos.first as! Regalo).cuando)! as Date
-            return fecha
-        } else {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy"
-            return formatter.date(from: "01/01/1000")!
-        }
-    }
-}
-*/

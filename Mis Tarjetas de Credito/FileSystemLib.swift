@@ -81,78 +81,6 @@ func genFileNameFromDateTime(sufix formato: String) -> String {
     return fileName
 }
 
-
-/*
- func cargarImagenDesde(fileName: String!) -> UIImage? {
- 
- if fileName != nil {
- if !fileName.isEmpty {
- //let fullFileName = URL(fileURLWithPath: fileName)
- 
- //"\((getDocumentsURL().appendingPathComponent(fileName)?.absoluteString)!).jpg"
- 
- let iImagen = UIImage(contentsOfFile: fileName!)
- 
- if iImagen == nil {
- print("No se encontró la imagen: \(fileName!)")
- } else {
- print("Cargando imagen de la ruta: \(fileName!)")
- }
- 
- // this is just for you to see the path in case you want to go to the directory, using Finder.
- return iImagen
- }
- }
- return UIImage()
- }
- 
- func guardarImagen(imagen: UIImage!) -> Bool {
- 
- //let jpgImage = UIImagePNGRepresentation(image)
- 
- let jpgImage = UIImageJPEGRepresentation(imagen, 0.6)
- 
- var isOk: Bool?
- 
- let fileName = getDocumentsURL().appendingPathComponent(genFileNameFromDateTime())
- 
- //self.nombreArchivoImagen =  "\(fileName!)"
- 
- do {
- _ = try jpgImage?.write(to: fileName!)
- print("La imagen fue almacenada en el dispositivo \(fileName!)")
- isOk = true
- } catch let err {
- isOk = false
- print("No se pudo almacenar la imagen: \(err.localizedDescription)")
- }
- return isOk!
- }
- 
- func saveImage(image: UIImage!, imageFullFileName fullName: inout String) -> Bool {
- 
- //let jpgImage = UIImagePNGRepresentation(image)
- 
- let jpgImage = UIImageJPEGRepresentation(imagen, 0.6)
- 
- var isOk: Bool?
- 
- let fileName = getDocumentsURL().appendingPathComponent(genFileNameFromDateTime())
- 
- //self.nombreArchivoImagen =  "\(fileName!)"
- 
- do {
- _ = try jpgImage?.write(to: fileName!)
- print("La imagen fue almacenada en el dispositivo \(fileName!)")
- isOk = true
- } catch let err {
- isOk = false
- print("No se pudo almacenar la imagen: \(err.localizedDescription)")
- }
- return isOk!
- }
- */
-
 // conseguido en internet
 // https://iosdevcenters.blogspot.com/2016/04/save-and-get-image-from-document.html
 
@@ -208,12 +136,8 @@ func saveImageIn(directory directoryName: String, image: UIImage!, fullFileName 
         //print("File name: \(fileName)")
         //print("Full path: \(fullPath)")
         
-        //let image = UIImage(named: fileName)
-        
         let imageData = UIImageJPEGRepresentation(image!, 0.5)
-        
-        //isSaveOk = manager.createFile(atPath: fullPath.absoluteString, contents: imageData, attributes: nil)
-        
+
         do {
             
             try imageData?.write(to: fullPath)
@@ -233,60 +157,6 @@ func saveImageIn(directory directoryName: String, image: UIImage!, fullFileName 
     return isSaveOk
 }
 
-/*
-func savePDFIn(directory directoryName: String, pdfRender: drawPDFUsingPrintPageRenderer, fullFileName fileName: inout String) -> Bool {
-    
-    //let manager = FileManager.default
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    
-    var isSaveOk: Bool = true
-    
-    if isAValidDirectory(directory: directoryName) {
-        let path = paths.appendingPathComponent(directoryName)
-        
-        fileName = genFileNameFromDateTime(sufix: "pdf")
-        
-        let fullPath = path.appendingPathComponent(fileName)
-        
-        //print("File name: \(fileName)")
-        //print("Full path: \(fullPath)")
-        
-        //let image = UIImage(named: fileName)
-        
-        //let imageData = UIImageJPEGRepresentation(image!, 0.5)
-        
-        //isSaveOk = manager.createFile(atPath: fullPath.absoluteString, contents: imageData, attributes: nil)
-        
-        pdfRender
-        
-        do {
-            
-            try imageData?.write(to: fullPath)
-            
-        } catch (let error as Error) {
-            print("Error al escribir imagen: \(error.localizedDescription)")
-            isSaveOk = false
-        }
-        
-        if !isSaveOk {
-            print("No se pudo almacenar el archivo \(fullPath.absoluteString)")
-        }
-    } else {
-        isSaveOk = false
-    }
-    
-    return isSaveOk
-}
-*/
-
-// get document directory path
-/*
- func getDirectoryPath() -> String {
- let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
- let documentsDirectory = paths[0]
- return documentsDirectory
- }
- */
 
 // get image from document directory
 func getImageFrom(directory directoryName: String, fileName: String) -> UIImage {
@@ -608,26 +478,6 @@ func valorFormateado(valor: Double, decimales: Int, estilo: NumberFormatter.Styl
     
     fmtNumber.numberStyle = estilo
     fmtNumber.maximumFractionDigits = decimales
-    
     return fmtNumber.string(from: NSNumber.init(value: valor))!
 }
 
-extension String {
-    func getFilenameWithoutExtension() -> String {
-        return URL(fileURLWithPath: self).deletingPathExtension().lastPathComponent
-    }
-    
-    func getFileExtension() -> String {
-        return (self as NSString).pathExtension
-    }
-    
-    func occurrencies(_ chr: Character) -> Int {
-        var count: Int = 0
-        for char in self.characters {
-            if char == chr {
-                count += 1
-            }
-        }
-        return count
-    }
-}

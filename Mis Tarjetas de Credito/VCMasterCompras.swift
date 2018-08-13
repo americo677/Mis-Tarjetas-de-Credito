@@ -93,8 +93,6 @@ class VCMasterCompras: UIViewController {
         
         tfFecha.text = fmtDate.string(from: picker.date)
         
-        //presupuesto?.setValue(picker.date, forKey: smModelo.smPresupuesto.colFechaIni)
-        
         tfFecha.resignFirstResponder()
     }
 
@@ -164,8 +162,7 @@ class VCMasterCompras: UIViewController {
 
     // MARK: - Función para recuperar la data de la BD
     func getData() {
-        
-        
+        // do nothing
     }
     
     // MARK: - Función para desplegar los datos recuperados por pantalla
@@ -222,29 +219,77 @@ class VCMasterCompras: UIViewController {
         }
     }
 
+    // MARK: - Función para desplegar los datos por pantalla con modificación
+    func showDataForUpdate() {
+        /*
+        if self.compra != nil {
+            self.tfDescripcion.text = self.compra?.descripcion
+            self.tfComercio.text = self.compra?.comercio
+            self.tfFecha.text = fmtDate.string(from: (self.compra?.fecha)! as Date)
+            self.tfValor.text = fmtMon.string(from: NSNumber.init(value: (self.compra?.valor)!))
+            self.tfPlazo.text = fmtFloat.string(from: NSNumber.init(value: (self.compra?.plazo)!))!
+            
+            self.tfTEA.text = fmtFloat.string(from: NSNumber.init(value: (self.compra?.tea)!))!
+            
+            if (self.nombreImagenSeleccionada != nil) {
+                if (self.nombreImagenSeleccionada != "") && (self.nombreImagenSeleccionada != self.compra?.imagen!) {
+                    self.nombreArchivoImagen = self.nombreImagenSeleccionada
+                } else {
+                    self.nombreArchivoImagen = self.compra?.imagen!
+                }
+                
+                //self.ivCompra.image = getImageFrom(directory: Global.Path.imagenes, fileName: (self.compra?.imagen!)!)
+                self.ivCompra.image = getImageFrom(directory: Global.Path.imagenes, fileName: (self.nombreArchivoImagen)!)
+            } else {
+                self.ivCompra.image = UIImage(named: "icono-bolsocompra.png")
+            }
+        } else {
+            self.tfDescripcion.text = ""
+            self.tfComercio.text = ""
+            self.tfFecha.text = ""
+            self.tfValor.text = ""
+            self.tfPlazo.text = ""
+            
+            self.tfTEA.text = fmtFloat.string(from: NSNumber.init(value: (self.tarjeta?.teaVigente)!))!
+            
+            self.nombreArchivoImagen = nil
+            //self.nombreImagenSeleccionada = ""
+            
+            //self.ivCompra.image = UIImage(named: "icono-bolsocompra.png")
+            if (self.nombreImagenSeleccionada != "") {
+                self.nombreArchivoImagen = self.nombreImagenSeleccionada
+                
+                self.ivCompra.image = getImageFrom(directory: Global.Path.imagenes, fileName: (self.nombreArchivoImagen)!)
+            } else {
+                self.ivCompra.image = UIImage(named: "icono-bolsocompra.png")
+            }
+            
+        }
+ */
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // para consultar el único programa esperado
         self.getData()
-        
-        self.showData()
+        self.showDataForUpdate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        let isOk = self.guardar()
+        //let isOk = self.guardar()
         
-        if isOk {
-            if self.boolEsNuevo {
-                showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron grabados con éxito.", toFocus: nil)
-            } else {
-                showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron actualizados con éxito.", toFocus: nil)
-            }
-        }
+        //if isOk {
+        //    if self.boolEsNuevo {
+        //        showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron grabados con éxito.", toFocus: nil)
+        //    } else {
+        //        showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron actualizados con éxito.", toFocus: nil)
+        //    }
+        //}
 
     }
 
@@ -307,18 +352,25 @@ class VCMasterCompras: UIViewController {
                 
                 compra.setValue(fmtDate.date(from: (self.tfFecha.text)!), forKey: "fecha")
                 
-                compra.setValue(fmtMon.number(from: self.tfValor.text!)?.doubleValue, forKey: "valor")
+                compra.setValue(self.tfValor.text?.doubleValue(), forKey: "valor")
                 
-                compra.setValue(fmtFloat.number(from:  self.tfPlazo.text!), forKey: "plazo")
+                compra.setValue(self.tfPlazo.text?.floatValue(), forKey: "plazo")
                 
-                compra.setValue(fmtFloat.number(from:  self.tfTEA.text!), forKey: "tea")
+                compra.setValue(self.tfTEA.text?.floatValue(), forKey: "tea")
                 
-                if self.nombreArchivoImagen != nil {
-                    compra.setValue(self.nombreArchivoImagen, forKey:"imagen")
+                // original
+                //if self.nombreArchivoImagen != nil {
+                //    compra.setValue(self.nombreArchivoImagen, forKey:"imagen")
+                //} else {
+                //    compra.setValue("icono-bolsocompra.png", forKey: "imagen")
+                //}
+                
+                if self.nombreImagenSeleccionada != nil {
+                    compra.setValue(self.nombreImagenSeleccionada, forKey:"imagen")
                 } else {
                     compra.setValue("icono-bolsocompra.png", forKey: "imagen")
                 }
-                
+
                 self.tarjeta?.addToCompras(compra: compra as! Compra)
                 
             } else if self.boolEsModificacion {
@@ -341,13 +393,36 @@ class VCMasterCompras: UIViewController {
 
                 self.compra?.setValue(fmtFloat.number(from:  self.tfTEA.text!), forKey: "tea")
 
-                if self.nombreArchivoImagen != "icono-bolsocompra.png" {
-                    self.compra?.setValue(self.nombreArchivoImagen, forKey:"imagen")
-                //} else {
-                //    self.compra?.setValue("icono-bolsocompra.png", forKey: "imagen")
+                // original
+                //if self.nombreArchivoImagen != "icono-bolsocompra.png" {
+                //    self.compra?.setValue(self.nombreArchivoImagen, forKey:"imagen")
+                //}
+
+                if self.nombreImagenSeleccionada != "icono-bolsocompra.png" {
+                    self.compra?.setValue(self.nombreImagenSeleccionada, forKey:"imagen")
                 }
             }
         }
+    }
+    
+    func mandatoryFieldsIsOk() -> Bool {
+        if !self.tfDescripcion.hasText {
+            return false
+        }
+        
+        if !self.tfComercio.hasText {
+            return false
+        }
+        
+        if !self.tfFecha.hasText {
+            return false
+        }
+        
+        if !self.tfValor.hasText || !self.tfTEA.hasText || !self.tfPlazo.hasText {
+            return false
+        }
+        
+        return true
     }
     
     // MARK: - Precedimiento de guardado
@@ -391,18 +466,27 @@ class VCMasterCompras: UIViewController {
         
         if sender == tfValor {
             if sender.hasText {
-                let valor: Double = fmtFloat.number(from: sender.text!)!.doubleValue
-                sender.text = valorFormateado(valor: valor, decimales: 2, estilo: .currency)
+                // original
+                // let valor: Double = fmtFloat.number(from: sender.text!)!.doubleValue
+                let valor: Double = (sender.text?.doubleValue())!
+                // oriinal
+                // sender.text = valorFormateado(valor: valor, decimales: 2, estilo: .currency)
+                sender.text = valor.doubleFormatter(decimales: 2, estilo: .currency)
             }
         } else if sender == tfPlazo {
             if sender.hasText {
-                let plazo: Double = fmtFloat.number(from: sender.text!)!.doubleValue
-                sender.text = valorFormateado(valor: plazo, decimales: 0)
+                //let plazo: Double = fmtFloat.number(from: sender.text!)!.doubleValue
+                let plazo: Double = (sender.text?.doubleValue())!
+                //sender.text = valorFormateado(valor: plazo, decimales: 0)
+                sender.text = plazo.doubleFormatter(decimales: 0)
             }
         } else if sender == tfTEA {
             if sender.hasText {
-                let tasa: Double = fmtFloat.number(from: sender.text!)!.doubleValue
-                sender.text = valorFormateado(valor: tasa, decimales: 2, estilo: .decimal)
+                
+                //let tasa: Double = fmtFloat.number(from: sender.text!)!.doubleValue
+                let tasa: Double = (sender.text?.doubleValue())!
+                //sender.text = valorFormateado(valor: tasa, decimales: 2, estilo: .decimal)
+                sender.text = tasa.doubleFormatter(decimales: 2, estilo: .decimal)
             }
         }
     }
@@ -421,25 +505,28 @@ extension VCMasterCompras: UINavigationControllerDelegate, UIImagePickerControll
     
     // MARK: - Acciones de los botones de la vista
     @IBAction func btnTomarFotoOnTouchUpInside(_ sender: UIButton) {
-        ipcControlador = UIImagePickerController()
-        ipcControlador.delegate = self
-        ipcControlador.sourceType = .camera
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            present(ipcControlador, animated: true, completion: nil)
-        } else {
-            //print("No se ha detectado la presencia de cámara!")
+        if mandatoryFieldsIsOk() {
+            ipcControlador = UIImagePickerController()
+            ipcControlador.delegate = self
+            ipcControlador.sourceType = .camera
             
-            showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "No se ha detectado cámara en el dispositivo.  No es posible hacer la captura.", toFocus: nil)
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                present(ipcControlador, animated: true, completion: nil)
+            } else {
+                //print("No se ha detectado la presencia de cámara!")
+                
+                showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "No se ha detectado cámara en el dispositivo.  No es posible hacer la captura.", toFocus: nil)
+            }
         }
-        
     }
     
     @IBAction func btnLibreriaFotosOnTouchUpInside(_ sender: UIButton) {
-        ipcControlador = UIImagePickerController()
-        ipcControlador.delegate = self
-        ipcControlador.sourceType = .savedPhotosAlbum
-        present(ipcControlador, animated: true, completion: nil)
+        if mandatoryFieldsIsOk() {
+            ipcControlador = UIImagePickerController()
+            ipcControlador.delegate = self
+            ipcControlador.sourceType = .savedPhotosAlbum
+            present(ipcControlador, animated: true, completion: nil)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -447,65 +534,32 @@ extension VCMasterCompras: UINavigationControllerDelegate, UIImagePickerControll
         
         ipcControlador.dismiss(animated: true, completion: nil)
         
-        //self.ivCompra.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        
         iImagenParaGuardar = info[UIImagePickerControllerOriginalImage] as? UIImage
         
         // Si se utilizó la cámara, se procede con la compresión y guardado.
         if picker.sourceType == .camera {
-            
-            //let resultado = guardarImagen(imagen: iImagenParaGuardar)
-            
             self.nombreImagenSeleccionada = ""
             
             let resultado = saveImageIn(directory: Global.Path.imagenes, image: iImagenParaGuardar, fullFileName: &self.nombreImagenSeleccionada!)
+            
+            print("Nombre de imagen seleccionada: \(self.nombreImagenSeleccionada!)")
             
             self.ivCompra.image = iImagenParaGuardar!
             
             if !resultado {
                 self.nombreImagenSeleccionada = ""
                 showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "La imagen no pudo ser guardada", toFocus: nil)
-            //} else {
-                //_ = guardar()
-                
-                //let isOk = self.guardar()
-                
-                //if isOk {
-                //    if self.boolEsNuevo {
-                //        showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron grabados con éxito.", toFocus: nil)
-                //    } else {
-                //        showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron actualizados con éxito.", toFocus: nil)
-                //    }
-                //}
-
             }
-            // obtiene la data de la imagen con compresión al 0.6
-            //let imageDataCompressed = UIImageJPEGRepresentation(iImagenParaGuardar!, 0.6)
-            //let compressedJPEGImage = UIImage(data: imageDataCompressed!)!
-            //UIImageWriteToSavedPhotosAlbum(compressedJPEGImage, nil, nil, nil)
         } else {
-            //let copiado = guardarImagen(imagen: iImagenParaGuardar)
-            //if self.nombreArchivoImagen == nil {
             self.nombreImagenSeleccionada = ""
-            //}
             
             let copiado = saveImageIn(directory: Global.Path.imagenes, image: iImagenParaGuardar, fullFileName: &self.nombreImagenSeleccionada!)
             
+            self.ivCompra.image = iImagenParaGuardar!
+
             if !copiado {
                 self.nombreImagenSeleccionada = ""
                 showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "La imagen no pudo ser guardada", toFocus: nil)
-            //} else {
-                // _ = guardar()
-                //let isOk = self.guardar()
-                
-                //if isOk {
-                //    if self.boolEsNuevo {
-                //        showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron grabados con éxito.", toFocus: nil)
-                //    } else {
-                //        showCustomAlert(self, titleApp: Global.APP_NAME, strMensaje: "Los datos de la compra fueron actualizados con éxito.", toFocus: nil)
-                //    }
-                //}
-
             }
         }
     }

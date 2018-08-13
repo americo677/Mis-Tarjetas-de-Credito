@@ -59,8 +59,15 @@ class CompositorReporte: NSObject {
             
             HTMLContent = HTMLContent.replacingOccurrences(of: "#VALOR_COMPRA#", with: valorFormateado(valor: (compra?.valor)!, decimales: 2, estilo: .decimal))
             
-            HTMLContent = HTMLContent.replacingOccurrences(of: "#FECHA_COMPRA#", with: fmtDate.string(from: (compra?.fecha! as! Date)))
+            let date = compra?.fecha as Date?
             
+            if (date == nil) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "#FECHA_COMPRA#", with: "N.A.")
+            } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "#FECHA_COMPRA#", with: fmtDate.string(from: (date)!))
+            }
+
+
             HTMLContent = HTMLContent.replacingOccurrences(of: "#DESCRIPCION_COMPRA#", with: (compra?.descripcion)!)
 
             HTMLContent = HTMLContent.replacingOccurrences(of: "#TOTAL_A_PAGAR#", with: valorFormateado(valor: (compra?.totalAPagar())!, decimales: 2, estilo: .decimal))
@@ -197,22 +204,12 @@ class CompositorReporte: NSObject {
         
         printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
         
-        
-        //pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir())/Invoice\(invoiceNumber).pdf"
-        
-        //savePDFIn(directory: "reports", image: <#T##UIImage!#>, fullFileName: &<#T##String#>)
-        
-        
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
         let path = paths.appendingPathComponent("reports")
 
-        //var isSaveOk: Bool = true
-        
         if isAValidDirectory(directory: "reports") {
             
-            //fileName = genFileNameFromDateTime(sufix: "jpg")
-
             var pdfFileName: String?
             
             if tipoReporte == .compra {
@@ -227,60 +224,13 @@ class CompositorReporte: NSObject {
             //print("File name: \(fileName)")
             //print("Full path: \(fullPath)")
             
-            //let image = UIImage(named: fileName)
-            
-            //let imageData = UIImageJPEGRepresentation(image!, 0.5)
-            
-            //isSaveOk = manager.createFile(atPath: fullPath.absoluteString, contents: imageData, attributes: nil)
-            
-            //do {
-                
-            //    try
-            //_ = drawPDFWith(renderer: printPageRenderer, pdfFileName: fullPath.relativePath)
-
             pdfGenerator(htmlContent: HTMLContent, formatter: formatter).write(to: fullPath, atomically: false)
-            
-            //pdfData?.write(toFile: fullPath.absoluteString, atomically: true)
-                
-            //    print("PDF generado: \(fullPath.relativePath)")
             
             return fullPath
                 
-                    //imageData?.write(to: fullPath)
-                
-            //} catch {
-            //    print("Error al escribir imagen: \(error.localizedDescription)")
-            //    isSaveOk = false
-            //}
-            
-            //if !isSaveOk {
-            //    print("No se pudo almacenar el archivo \(fullPath.absoluteString)")
-            //}
-            
         }
         
         return path
-        //else {
-        //    isSaveOk = false
-        //}
-        
-        //return isSaveOk
-
-        
-        
-        
-        
-//        var pdfFileName: String?
-        
-//        if tipoReporte == .compra {
-//            pdfFileName = pdfFileReportCompra
-//        } else if tipoReporte == .extracto {
-//            pdfFileName = pdfFileReportExtracto
-//        }
-        
-//        pdfData?.write(toFile: pdfFileName!, atomically: true)
-        
-//        print("PDF generado: \(pdfFileName!)")
     }
     
 }

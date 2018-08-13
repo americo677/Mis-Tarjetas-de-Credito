@@ -45,8 +45,14 @@ class VCMasterTarjetas: UIViewController {
         //dtFormatter.dateFormat = "dd/MM/yyyy"
         
         // Preparación de los formateadores númericos
-        fmtFloat.numberStyle = .none
+        // fmtFloat.numberStyle = .none
+        fmtFloat.locale = NSLocale.current
+        fmtFloat.usesGroupingSeparator = true
+        fmtFloat.numberStyle = .decimal
         fmtFloat.maximumFractionDigits = 2
+        
+        // todo: para hacer pruebas
+        //showCustomAlert(self, titleApp: "demo", strMensaje: "separador decimal \(fmtFloat.decimalSeparator!) and Locale seprator: \(NSLocale.current.decimalSeparator)", toFocus: nil)
         
         fmtMon.numberStyle = .currency
         fmtMon.maximumFractionDigits = 2
@@ -249,7 +255,10 @@ class VCMasterTarjetas: UIViewController {
                 
                 tarjeta.setValue(fmtMon.number(from: self.tfCupoAsignado.text!)?.doubleValue, forKey: "disponible")
 
-                tarjeta.setValue(fmtFloat.number(from:  self.tfTEAVigente.text!), forKey: "teaVigente")
+                // original
+                // tarjeta.setValue(fmtFloat.number(from:  self.tfTEAVigente.text!), forKey: "teaVigente")
+                tarjeta.setValue(self.tfTEAVigente.text?.floatValue(), forKey: "teaVigente")
+
                 
             } else if self.boolEsModificacion {
                 
@@ -263,7 +272,9 @@ class VCMasterTarjetas: UIViewController {
                 
                 self.tarjeta?.setValue(fmtMon.number(from: self.tfCupoAsignado.text!)?.doubleValue, forKey: "disponible")
 
-                self.tarjeta?.setValue(fmtFloat.number(from:  self.tfTEAVigente.text!), forKey: "teaVigente")
+                // original
+                //self.tarjeta?.setValue(fmtFloat.number(from:  self.tfTEAVigente.text!), forKey: "teaVigente")
+                self.tarjeta?.setValue(self.tfTEAVigente.text?.floatValue(), forKey: "teaVigente")
             }
         }
     }
@@ -303,17 +314,17 @@ class VCMasterTarjetas: UIViewController {
             let creditCardNumber: NSString? = sender.text! as NSString
             var creditCardNumberFormatted: NSString?
             
-            let longitudNumeroTC = (sender.text?.characters.count)!
+            let longitudNumeroTC = (sender.text?.count)!
             
             if longitudNumeroTC == 16 {
                 //formattedCCNumber = [self.creditCardNumber stringByReplacingOccurrencesOfString:@"(\\d{4})(\\d{4})(\\d{4})(\\d+)" withString:@"$1-$2-$3-$4" options:NSRegularExpressionSearch range:NSMakeRange(0, [self.creditCardNumber length])];
                 
-                creditCardNumberFormatted = creditCardNumber?.replacingOccurrences(of: "(\\d{4})(\\d{4})(\\d{4})(\\d+)", with: "$1 $2 $3 $4", options: String.CompareOptions.regularExpression, range: NSRange(location: 0, length: longitudNumeroTC)) as? NSString
+                creditCardNumberFormatted = creditCardNumber?.replacingOccurrences(of: "(\\d{4})(\\d{4})(\\d{4})(\\d+)", with: "$1 $2 $3 $4", options: String.CompareOptions.regularExpression, range: NSRange(location: 0, length: longitudNumeroTC)) as NSString?
                 
             } else if longitudNumeroTC == 15 {
                 //formattedCCNumber = [self.creditCardNumber stringByReplacingOccurrencesOfString:@"(\\d{4})(\\d{6})(\\d+)" withString:@"$1-$2-$3" options:NSRegularExpressionSearch range:NSMakeRange(0, [self.creditCardNumber length])];
                 
-                creditCardNumberFormatted = creditCardNumber?.replacingOccurrences(of: "(\\d{4})(\\d{6})(\\d+)", with: "$1 $2 $3", options: String.CompareOptions.regularExpression, range: NSRange(location: 0, length: longitudNumeroTC)) as? NSString
+                creditCardNumberFormatted = creditCardNumber?.replacingOccurrences(of: "(\\d{4})(\\d{6})(\\d+)", with: "$1 $2 $3", options: String.CompareOptions.regularExpression, range: NSRange(location: 0, length: longitudNumeroTC)) as NSString?
                 
                 //NSRange(location:0, length: longitudNumeroTC))
             } else if longitudNumeroTC == 19 || longitudNumeroTC == 17 {
@@ -345,17 +356,28 @@ class VCMasterTarjetas: UIViewController {
             if sender.hasText {
                 var cupo: Double = 0
                 
-                if fmtMon.number(from: sender.text!)?.doubleValue == nil {
-                    cupo = fmtFloat.number(from: sender.text!)!.doubleValue
-                } else {
-                    cupo = fmtMon.number(from: sender.text!)!.doubleValue
+                //if fmtMon.number(from: sender.text!)?.doubleValue == nil {
+                    // original
+                    //cupo = fmtFloat.number(from: sender.text!)!.doubleValue
+                if let valor: Double = sender.text?.doubleValue() {
+                    cupo = valor
                 }
-                sender.text = valorFormateado(valor: cupo, decimales: 2, estilo: .currency)
+                //} else {
+                    // original
+                    //cupo = fmtMon.number(from: sender.text!)!.doubleValue
+                //    cupo = (sender.text?.doubleFormatter(decimales: 2, estilo: .currency))!
+                //}
+                
+                // original
+                //sender.text = valorFormateado(valor: cupo, decimales: 2, estilo: .currency)
+                sender.text = cupo.doubleFormatter(decimales: 2, estilo: .currency)
             }
             
         } else if sender == tfTEAVigente {
             if sender.hasText {
-                let tasa: Double = fmtFloat.number(from: sender.text!)!.doubleValue
+                // original
+                // let tasa: Double = fmtFloat.number(from: sender.text!)!.doubleValue
+                let tasa: Double = (sender.text?.doubleValue())!
                 sender.text = valorFormateado(valor: tasa, decimales: 2, estilo: .decimal)
             }
         }

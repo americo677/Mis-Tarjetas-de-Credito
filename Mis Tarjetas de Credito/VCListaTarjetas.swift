@@ -46,23 +46,13 @@ class VCListaTarjetas: UIViewController {
     // MARK: - Carga inicial de la vista
     func loadPreferences() {
         
-        //initTableView(tableView: self.tvTarjetas, backgroundColor: UIColor.customUltraLightBlue())
-        
         initTableView(tableView: self.tvTarjetas, backgroundColor: UIColor.clear)
 
         initToolBar(toolbarDesign: .toLeftBackToRightEditNewStyle, actions: [nil, #selector(self.btnEditOnTouchUpInside(_:)), #selector(self.btnNuevoOnTouchUpInside(_:))], title: "Mis Tarjetas")
         
         configSearchBar(tableView: tvTarjetas)
         
-        //self.view.backgroundColor = UIColor.customUltraLightBlue()
-        
-        //self.tvPeriodos.isHidden = true
-        
-        //initViewForPicker()
-        
         initFormatters()
-        
-        //initDatePickers()
     }
 
     // MARK: - Procedimiento para recuperar los datos de la BD
@@ -90,7 +80,7 @@ class VCListaTarjetas: UIViewController {
         
         _ = copyFileFromBundleToDirectory(directory: Global.Path.imagenes, file: "icono-bolsocompra.png")
         
-        //print("\(getPath("BDTarjetasCredito.sqlite"))")
+        print("\(getPath("BDTarjetasCredito.sqlite"))")
 
     }
 
@@ -296,10 +286,6 @@ extension VCListaTarjetas: UITableViewDelegate, UITableViewDataSource {
         let myBundle = Bundle(for: VCListaTarjetas.self)
         let nib = UINib(nibName: "CustomCellTarjeta", bundle: myBundle)
         
-        //self.tvPeriodos.register(nib, forCellReuseIdentifier: identifier)
-        //self.tvTarjetas.register(nib, forCellReuseIdentifier: identifier)
-        
-        //self.tvPeriodos.register(nib, forCellReuseIdentifier: identifier)
         tableView.register(nib, forCellReuseIdentifier: identifier)
         
         tableView.allowsMultipleSelectionDuringEditing = false
@@ -348,22 +334,6 @@ extension VCListaTarjetas: UITableViewDelegate, UITableViewDataSource {
             self.tarjeta = self.tarjetas[indexPath.row] as? Tarjeta
         }
         
-        //cell?.backgroundColor = UIColor.customUltraLightBlue()
-        
-        //cell?.textLabel?.textColor = UIColor.customLightColor()
-        
-        //cell?.textLabel?.text = self.rango?.descripcion
-        
-        //cell?.detailTextLabel?.text = "\((self.rango?.limiteInferior)!) a \( (self.rango?.limiteSuperior)!)"
-        
-        //self.rango?.limiteInferior,
-        //if self.rango?.indiceDuracion != nil {
-        //    let nsIndice = Int((self.rango?.indiceDuracion)!)
-        //    cell?.detailTextLabel?.text = Global.arreglo.nombreDuracion[nsIndice]
-        //} else {
-        //    cell?.detailTextLabel?.text = ""
-        //}
-        
         cell?.lblBancoFranquicia.text = (self.tarjeta?.banco)!
             
         if (self.tarjeta?.franquicia)?.lowercased() == "visa" {
@@ -380,28 +350,29 @@ extension VCListaTarjetas: UITableViewDelegate, UITableViewDataSource {
         
         cell?.lblNumeroTarjeta.text = self.tarjeta?.numero
         
-        cell?.lblCupoDisponible.text = fmtMon.string(from: NSNumber.init(value: (self.tarjeta?.disponible)!))
         
-        cell?.lblTEAVigente.text = fmtFloat.string(from: NSNumber.init(value: (self.tarjeta?.teaVigente)!))! + "%"
+        // TODO: para corregir
+
+        // original
+        //cell?.lblCupoDisponible.text = fmtMon.string(from: NSNumber.init(value: (self.tarjeta?.disponible)!))
+        //let defaultColor: UIColor = cell?.lblCupoDisponible.textColor
+        
+        if (self.tarjeta?.disponible)! < Double.init(0) {
+            cell?.lblCupoDisponible.textColor = UIColor.red
+        }
+        
+        cell?.lblCupoDisponible.text = self.tarjeta?.disponible.doubleFormatter(decimales: 0, estilo: .currency)
+        
+        // original
+        //cell?.lblTEAVigente.text = fmtFloat.string(from: NSNumber.init(value: (self.tarjeta?.teaVigente)!))! + "%"
+
+        cell?.lblTEAVigente.text = (self.tarjeta?.teaVigente.doubleFormatter(decimales: 2, estilo: .decimal))! + "%"
         
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.customUltraLightBlue()
         cell?.selectedBackgroundView = backgroundView
         
         return cell!
-        
-        /*
-         cell?.backgroundView?.backgroundColor = UIColor.customUltraLightBlue()
-         cell?.backgroundColor = UIColor.customUltraLightBlue()
-         
-         cell?.textLabel?.text = self.periodo?.nombre?.capitalized
-         
-         cell?.textLabel?.textColor = UIColor.darkGray
-         cell?.textLabel?.shadowColor = UIColor.lightGray
-         cell?.textLabel?.shadowOffset = CGSize(width: 1, height: 1)
-         
-         return cell!
-         */
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -447,14 +418,7 @@ extension VCListaTarjetas: UITableViewDelegate, UITableViewDataSource {
                 self.tarjeta = self.tarjetas[indexPath.row] as? Tarjeta
             }
             
-            
-            //let boolPreservar: Bool = self.rango!.preservar as! Bool
-            
-            //if boolPreservar {
-            //self.presupuesto?.setValue(false, forKey: smModelo.smPresupuesto.colActivo)
-            //} else {
             self.moc.delete(self.tarjeta!)
-            //}
             
             if self.scSearchController.isActive && self.scSearchController.searchBar.text != "" {
                 self.tarjetasFiltradas.remove(at: indexPath.row)

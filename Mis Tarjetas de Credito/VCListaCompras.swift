@@ -19,6 +19,9 @@ class VCListaCompras: UIViewController {
     
     @IBOutlet weak var lblBanco: UILabel!
     
+    @IBOutlet weak var lblTotalCuota: UILabel!
+    
+    
     var tarjeta: Tarjeta? = nil
     var compra: Compra? = nil
     var compras = [AnyObject]()
@@ -110,6 +113,10 @@ class VCListaCompras: UIViewController {
             self.lblIntereses.text = valorFormateado(valor: (extracto?.totalIntereses)!, decimales: 2, estilo: .currency)
             
             self.lblCuota.text = valorFormateado(valor: (extracto?.totalPagoCuotas)!, decimales: 2, estilo: .currency)
+            
+            let total: Double = (extracto?.totalIntereses)! + (extracto?.totalPagoCuotas)!
+            
+            self.lblTotalCuota.text = total.doubleFormatter(decimales: 2, estilo: .currency)
         }
     }
 
@@ -411,26 +418,8 @@ extension VCListaCompras: UITableViewDelegate, UITableViewDataSource {
         backgroundView.backgroundColor = UIColor.customUltraLightBlue()
         cell?.selectedBackgroundView = backgroundView
 
-        //cell?.lblNumeroTarjeta.text = self.tarjeta?.numero
-        
-        //cell?.lblCupoDisponible.text = fmtMon.string(from: NSNumber.init(value: (self.tarjeta?.cupo)!))
-        
-        //cell?.lblTEAVigente.text = fmtFloat.string(from: NSNumber.init(value: (self.tarjeta?.teaVigente)!))! + "%"
-        
         return cell!
         
-        /*
-         cell?.backgroundView?.backgroundColor = UIColor.customUltraLightBlue()
-         cell?.backgroundColor = UIColor.customUltraLightBlue()
-         
-         cell?.textLabel?.text = self.periodo?.nombre?.capitalized
-         
-         cell?.textLabel?.textColor = UIColor.darkGray
-         cell?.textLabel?.shadowColor = UIColor.lightGray
-         cell?.textLabel?.shadowOffset = CGSize(width: 1, height: 1)
-         
-         return cell!
-         */
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -477,16 +466,7 @@ extension VCListaCompras: UITableViewDelegate, UITableViewDataSource {
             }
             
             
-            //let boolPreservar: Bool = self.rango!.preservar as! Bool
-            
-            //if boolPreservar {
-            //self.presupuesto?.setValue(false, forKey: smModelo.smPresupuesto.colActivo)
-            //} else {
-            //self.moc.delete(self.compra!)
-            
             self.tarjeta?.removeFromCompras(compra: self.compra!)
-            
-            //}
             
             if self.scSearchController.isActive && self.scSearchController.searchBar.text != "" {
                 self.comprasFiltradas.remove(at: indexPath.row)
@@ -494,14 +474,7 @@ extension VCListaCompras: UITableViewDelegate, UITableViewDataSource {
                 self.compras.remove(at: indexPath.row)
             }
             
-            //do {
-            //    try self.moc.save()
-                
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            //} catch {
-            //    let deleteError = error as NSError
-            //    print(deleteError)
-            //}
+            tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
